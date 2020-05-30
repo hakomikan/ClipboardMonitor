@@ -46,7 +46,7 @@ namespace ClipboardMonitor
             switch (msg.Msg)
             {
                 case WM_DRAWCLIPBOARD:
-                    if (Clipboard.ContainsText())
+                    if (Clipboard.GetDataObject() != null && ClipboardReceived != null)
                     {
                         ClipboardReceived();
                     }
